@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Julian Enry Lara-Martinez</title>
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card: #fff;
+      --text: #22223b;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --accent: #e0e7ff;
+      --border: #d1d5db;
+      font-size: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 32px 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+      position: relative;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 18px;
+      margin-bottom: 32px;
+    }
+
+    .name { font-size: 2rem; font-weight: 800; margin: 0; }
+    .subtitle { margin: 6px 0 0; color: var(--primary); font-weight: 600; font-size: 1.1rem; }
+
+    .contact small { display: block; color: var(--muted); margin-bottom: 4px; }
+    .contact a { color: var(--primary); text-decoration: underline; }
+    .contact {
+      font-size: 1rem;
+      text-align: right;
+    }
+
+    .section { margin-bottom: 20px; }
+    .section h2 {
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin: 0 0 14px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+
+    .summary p, .item p { margin: 0; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .item { margin-bottom: 14px; }
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 28px 0;
+      border-radius: 2px;
+    }
+
+    .item h3 { margin: 0; font-size: 1.05rem; }
+    .item .meta { color: var(--muted); font-size: 0.93rem; margin: 5px 0 8px; }
+    .item ul { margin: 8px 0 0; padding-left: 1.15em; color: var(--text); }
+
+    @media (max-width: 780px) {
+      .container { margin: 8px; padding: 12px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .grid-2 { grid-template-columns: 1fr; gap: 16px; }
+      .name { font-size: 1.5rem; }
+    }
+
+    .print-hidden { display: none; }
+    @media print {
+      body { background: #fff; }
+      .container { box-shadow: none; border: none; margin: 0; }
+      .print-hidden { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1 class="name">Julian Enry Lara-Martinez</h1>
+        <p class="subtitle">Sports Management Major · First Year Undergrad</p>
+      </div>
+      <div class="contact">
+        <small><strong>Email:</strong> <a href="mailto:Ju7ian3@gmail.com">Ju7ian3@gmail.com</a></small>
+        <small><strong>Phone:</strong> 541-490-0738</small>
+        <small><strong>Location:</strong> Hood River, Oregon, USA</small>
+      </div>
+    </header>
+
+    <section class="section summary">
+      <h2>Professional Summary</h2>
+        <p>Dynamic and bilingual undergraduate specializing in Sports Management, with advanced computer proficiency and practical IT experience. Demonstrates a strong commitment to excellence, adaptability, and rapid learning in both collaborative and independent environments. Passionate about leveraging technology and management principles to drive results in sports, sales, and customer service. Recognized for effective communication, problem-solving skills, and a proactive approach to new challenges.</p>
+      <div class="divider"></div>
+    </section>
+
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="item">
+        <h3>A Cherry On Top <span style="color:var(--muted); font-weight:400;">— Sales Person</span></h3>
+        <div class="meta">Current · Oregon, USA</div>
+        <ul>
+          <li>Provided customer service and sales support in a retail environment.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>Gorge Technology Inc <span style="color:var(--muted); font-weight:400;">— IT Assistant</span></h3>
+        <div class="meta">2022-2025 · Oregon, USA</div>
+        <ul>
+          <li>Hands-on IT work, troubleshooting and supporting technology needs.</li>
+          <li>Assisted with hardware/software setup and maintenance.</li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <div class="grid-2">
+      <section class="section">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Linfield University</h3>
+          <div class="meta">Sports Management Major · First Year Undergrad </div>
+          <p>Relevant coursework: Sports Management, Computer Science</p>
+        </div>
+        <div class="item">
+          <h3>High School Diploma</h3>
+          <div class="meta">Graduated 2025</div>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="section">
+        <h2>Skills</h2>
+        <ul style="margin:0 0 8px 1.15em;">
+          <li>Bilingual (Spanish & English)</li>
+          <li>Computer Knowledge</li>
+          <li>IT Support</li>
+          <li>Customer Service</li>
+          <li>Adaptability</li>
+          <li>Teamwork</li>
+          <li>Communication</li>
+          <li>Problem Solving</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>Personal Profile & Interests</h2>
+      <div class="item">
+        <p>Enjoys sports, technology, and learning new skills. Interested in sports management and computer capabilities. Active participant in university activities.</p>
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <section class="section">
+      <h2>References</h2>
+      <ul>
+        <li><strong>Alvaro Lara</strong> — Gorge Technology Inc</li>
+        <li class="phone"><strong>Phone:</strong> 541-399-0808</li>
+        <li class="email"><strong>Email:</strong> <a href="mailto:Alara@gorgetech.net">Alara@gorgetech.net</a></li>
+      </ul>
+    </section>
+
+    <p class="print-hidden" style="margin-top: 20px; color: var(--muted);">Edit this file and replace bracketed placeholders with your own details. Print mode hides this note.</p>
+  </div>
+</body>
+</html>
