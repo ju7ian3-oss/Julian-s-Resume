@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Littles PreSchool | Where Little Learners Grow Big Dreams</title>
+<meta name="description" content="Littles PreSchool offers a safe, nurturing, play-based learning environment for infants through pre-K. Schedule a tour or enroll today!" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow: #ffc857;
+    --yellow-dark: #f5a623;
+    --coral: #ff8672;
+    --teal: #2ec4b6;
+    --teal-dark: #1a9c90;
+    --purple: #8d7ae0;
+    --cream: #fffaf0;
+    --text: #33333d;
+    --muted: #6b6b76;
+    --white: #ffffff;
+    --radius-lg: 28px;
+    --radius-md: 18px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.65;
+  }
+  h1, h2, h3, .logo, .btn { font-family: 'Baloo 2', 'Segoe UI', sans-serif; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 0; position: relative; overflow: hidden; }
+  .eyebrow {
+    display: inline-block;
+    background: var(--accent, var(--yellow));
+    color: var(--text);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h2.section-title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+  .section-lead {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 48px;
+  }
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--coral); color: var(--white); box-shadow: 0 8px 20px rgba(255, 134, 114, 0.4); }
+  .btn-primary:hover { box-shadow: 0 12px 24px rgba(255, 134, 114, 0.5); }
+  .btn-outline { background: transparent; border-color: var(--white); color: var(--white); }
+  .btn-outline:hover { background: rgba(255,255,255,0.15); }
+  .btn-teal { background: var(--teal); color: var(--white); box-shadow: 0 8px 20px rgba(46, 196, 182, 0.35); }
+
+  /* ---------- Header / Nav ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 250, 240, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo span.dot { color: var(--coral); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--teal-dark); border-color: var(--teal); }
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+
+  @media (max-width: 860px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      flex-direction: column;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .nav-links.open { max-height: 400px; }
+    .nav-links li { border-top: 1px solid rgba(0,0,0,0.06); }
+    .nav-links a { display: block; padding: 14px 24px; }
+    .nav-toggle { display: block; }
+    .nav-cta .btn-primary { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 70px 0 100px;
+    background: linear-gradient(180deg, #fff6e0 0%, var(--cream) 100%);
+  }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+  .hero h1 .highlight { color: var(--coral); }
+  .hero p.lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 32px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
+  .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+  .hero-stats div strong { display: block; font-size: 1.5rem; color: var(--teal-dark); font-family: 'Baloo 2'; }
+  .hero-stats div span { color: var(--muted); font-size: 0.9rem; }
+
+  .hero-art {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at 30% 30%, var(--yellow) 0%, var(--yellow) 40%, transparent 41%),
+                linear-gradient(135deg, var(--teal) 0%, var(--purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 24px 60px rgba(141, 122, 224, 0.25);
+  }
+  .hero-art .emoji-cluster {
+    font-size: 5rem;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+  }
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  /* ---------- Trust bar ---------- */
+  .trust-bar {
+    background: var(--white);
+    padding: 22px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .trust-bar .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .trust-bar span { white-space: nowrap; }
+
+  /* ---------- Feature cards (About) ---------- */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(51, 51, 61, 0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .card .icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+  .icon-yellow { background: #fff2d2; }
+  .icon-teal { background: #d9f5f2; }
+  .icon-coral { background: #ffe4de; }
+  .icon-purple { background: #eae6fb; }
+
+  #about { background: var(--white); }
+
+  /* ---------- Programs ---------- */
+  #programs { background: var(--cream); }
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .program-card {
+    border-radius: var(--radius-md);
+    padding: 30px 24px;
+    color: var(--white);
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+  .program-card h3 { margin: 0 0 6px; font-size: 1.2rem; }
+  .program-card .age { font-weight: 700; opacity: 0.9; font-size: 0.85rem; margin-bottom: 10px; display: inline-block; }
+  .program-card p { margin: 0; font-size: 0.92rem; opacity: 0.95; }
+  .program-card .big-emoji { position: absolute; top: 18px; right: 18px; font-size: 2.2rem; opacity: 0.9; }
+  .p1 { background: linear-gradient(160deg, #ffb17a, var(--coral)); }
+  .p2 { background: linear-gradient(160deg, #ffd670, var(--yellow-dark)); }
+  .p3 { background: linear-gradient(160deg, #5fd6c9, var(--teal-dark)); }
+  .p4 { background: linear-gradient(160deg, #b0a2f0, var(--purple)); }
+
+  /* ---------- Schedule ---------- */
+  #schedule { background: var(--white); }
+  .schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  .schedule-table td {
+    padding: 16px 20px;
+    background: var(--cream);
+    font-size: 0.95rem;
+  }
+  .schedule-table tr td:first-child {
+    border-radius: 12px 0 0 12px;
+    font-weight: 700;
+    color: var(--teal-dark);
+    width: 190px;
+    white-space: nowrap;
+  }
+  .schedule-table tr td:last-child { border-radius: 0 12px 12px 0; }
+
+  /* ---------- Gallery ---------- */
+  #gallery { background: var(--cream); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: 18px;
+  }
+  .gallery-item {
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.85);
+  }
+  .gallery-item span.label {
+    position: absolute;
+    margin-top: 60px;
+    font-size: 0.75rem;
+    font-family: 'Nunito';
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+  }
+  .gallery-item { position: relative; }
+  .g1 { background: linear-gradient(135deg, #ffb17a, var(--coral)); grid-column: span 2; }
+  .g2 { background: linear-gradient(135deg, var(--teal), #5fd6c9); }
+  .g3 { background: linear-gradient(135deg, var(--purple), #b0a2f0); }
+  .g4 { background: linear-gradient(135deg, var(--yellow-dark), var(--yellow)); }
+  .g5 { background: linear-gradient(135deg, #5fd6c9, var(--teal-dark)); grid-column: span 2; }
+  .g6 { background: linear-gradient(135deg, var(--coral), #ffb17a); }
+  .gallery-note {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* ---------- Testimonials ---------- */
+  #testimonials { background: var(--white); }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--cream);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    position: relative;
+  }
+  .testimonial-card .stars { color: var(--yellow-dark); margin-bottom: 12px; letter-spacing: 2px; }
+  .testimonial-card p.quote { margin: 0 0 18px; color: var(--text); font-size: 0.98rem; }
+  .testimonial-card .who { display: flex; align-items: center; gap: 12px; }
+  .testimonial-card .avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; color: white; font-weight: 700;
+  }
+  .testimonial-card .who strong { display: block; font-size: 0.92rem; }
+  .testimonial-card .who small { color: var(--muted); }
+
+  /* ---------- Enroll steps ---------- */
+  #enroll {
+    background: linear-gradient(135deg, var(--teal-dark), var(--purple));
+    color: var(--white);
+  }
+  #enroll .section-lead { color: rgba(255,255,255,0.85); }
+  #enroll .eyebrow { background: rgba(255,255,255,0.2); color: var(--white); }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .step {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-md);
+    padding: 24px;
+  }
+  .step .num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--teal-dark);
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-family: 'Baloo 2';
+  }
+  .step h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .step p { margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.85); }
+  .enroll-cta { text-align: center; }
+
+  /* ---------- Contact ---------- */
+  #contact { background: var(--cream); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+  }
+  .info-list { list-style: none; margin: 0 0 28px; padding: 0; }
+  .info-list li {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .info-list .ic {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .info-list strong { display: block; }
+  .info-list span.small { color: var(--muted); font-size: 0.9rem; }
+  .hours-box {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+  }
+  .hours-box h3 { margin: 0 0 12px; font-size: 1rem; }
+  .hours-box .row { display: flex; justify-content: space-between; font-size: 0.92rem; padding: 6px 0; border-bottom: 1px dashed rgba(0,0,0,0.08); }
+  .hours-box .row:last-child { border-bottom: none; }
+
+  form.contact-form {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(51, 51, 61, 0.06);
+  }
+  form.contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  form.contact-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--muted);
+  }
+  form.contact-form input,
+  form.contact-form select,
+  form.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #e3ddd0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--cream);
+  }
+  form.contact-form input:focus,
+  form.contact-form select:focus,
+  form.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+  form.contact-form .full { margin-bottom: 16px; }
+  form.contact-form button { width: 100%; justify-content: center; border: none; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: #2a2438;
+    color: rgba(255,255,255,0.75);
+    padding: 56px 0 24px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  footer .logo { color: var(--white); margin-bottom: 12px; }
+  footer h4 { color: var(--white); font-size: 0.95rem; margin: 0 0 14px; }
+  footer ul { list-style: none; margin: 0; padding: 0; }
+  footer li { margin-bottom: 10px; font-size: 0.9rem; }
+  footer a { text-decoration: none; color: inherit; }
+  footer a:hover { color: var(--yellow); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+  .social-row { display: flex; gap: 12px; }
+  .social-row a {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .social-row a:hover { background: var(--teal); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-art { max-width: 420px; margin: 0 auto; }
+    .feature-grid, .program-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .g1, .g5 { grid-column: span 1; }
+  }
+  @media (max-width: 560px) {
+    section { padding: 56px 0; }
+    .feature-grid, .program-grid, .steps { grid-template-columns: 1fr; }
+    form.contact-form .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .trust-bar .wrap { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="wrap nav">
+    <a href="#top" class="logo">🌈 Littles<span class="dot">.</span>PreSchool</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#schedule">Daily Schedule</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#enroll">Enroll</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Schedule a Tour</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Where Little Learners<br>Grow <span class="highlight">Big Dreams</span> 🌱</h1>
+        <p class="lead">Littles PreSchool is a warm, play-based learning home for children 6 weeks through Pre-K, where curiosity is celebrated and every child feels safe, seen, and excited to learn.</p>
+        <div class="hero-actions">
+          <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+          <a href="#contact" class="btn" style="background:var(--white); border-color:#e3ddd0;">Schedule a Tour</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>15+</strong><span>Years Serving Families</span></div>
+          <div><strong>1:6</strong><span>Teacher-Child Ratio</span></div>
+          <div><strong>100%</strong><span>Certified Staff</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="emoji-cluster">🧸🎨✏️</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="wrap">
+      <span>✅ State Licensed</span>
+      <span>🩺 CPR &amp; First-Aid Certified Staff</span>
+      <span>🔒 Secure Check-In</span>
+      <span>🥗 Nutritious Meals &amp; Snacks Included</span>
+      <span>🌿 Outdoor Play Every Day</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="wrap">
+      <span class="eyebrow">Why Families Choose Us</span>
+      <h2 class="section-title">A Safe Place to Play, Learn &amp; Grow</h2>
+      <p class="section-lead">Our nurturing environment blends structured learning with plenty of free play, helping every child build confidence, curiosity, and a lifelong love of learning.</p>
+      <div class="feature-grid">
+        <div class="card">
+          <div class="icon icon-coral">🛡️</div>
+          <h3>Safe &amp; Nurturing</h3>
+          <p>Secure facilities, background-checked staff, and small groups so every child gets the attention they deserve.</p>
+        </div>
+        <div class="card">
+          <div class="icon icon-teal">🎓</div>
+          <h3>Certified Teachers</h3>
+          <p>Our lead teachers hold early childhood education credentials and ongoing professional training.</p>
+        </div>
+        <div class="card">
+          <div class="icon icon-yellow">🧩</div>
+          <h3>Play-Based Curriculum</h3>
+          <p>Hands-on learning through art, music, sensory play, and outdoor exploration builds real skills.</p>
+        </div>
+        <div class="card">
+          <div class="icon icon-purple">👨‍👩‍👧</div>
+          <h3>Family Partnership</h3>
+          <p>Daily updates, an open-door policy, and regular family events keep you connected to your child's day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs -->
+  <section id="programs">
+    <div class="wrap">
+      <span class="eyebrow">Programs</span>
+      <h2 class="section-title">Age-Appropriate Classrooms</h2>
+      <p class="section-lead">From first smiles to kindergarten readiness, each classroom is designed around how children learn best at every stage.</p>
+      <div class="program-grid">
+        <div class="program-card p1">
+          <span class="big-emoji">🍼</span>
+          <span class="age">6 weeks – 12 months</span>
+          <h3>Infants</h3>
+          <p>Gentle routines, sensory play, and lots of loving one-on-one care.</p>
+        </div>
+        <div class="program-card p2">
+          <span class="big-emoji">🚼</span>
+          <span class="age">1 – 2 years</span>
+          <h3>Toddlers</h3>
+          <p>Exploration-driven activities that build language, motor skills, and independence.</p>
+        </div>
+        <div class="program-card p3">
+          <span class="big-emoji">🎨</span>
+          <span class="age">3 – 4 years</span>
+          <h3>Preschool</h3>
+          <p>Early literacy, math concepts, creative arts, and social-emotional growth.</p>
+        </div>
+        <div class="program-card p4">
+          <span class="big-emoji">🎒</span>
+          <span class="age">4 – 5 years</span>
+          <h3>Pre-K</h3>
+          <p>A kindergarten-readiness curriculum focused on confidence and school skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <div class="wrap">
+      <span class="eyebrow">A Day at Littles</span>
+      <h2 class="section-title">Sample Daily Schedule</h2>
+      <p class="section-lead">A predictable rhythm helps children feel secure while leaving room for curiosity to lead the way.</p>
+      <table class="schedule-table">
+        <tbody>
+          <tr><td>7:00 – 8:30 AM</td><td>Arrival &amp; Free Play</td></tr>
+          <tr><td>8:30 – 9:00 AM</td><td>Breakfast &amp; Morning Circle</td></tr>
+          <tr><td>9:00 – 10:00 AM</td><td>Learning Centers (Art, Literacy, Math)</td></tr>
+          <tr><td>10:00 – 11:00 AM</td><td>Outdoor Play</td></tr>
+          <tr><td>11:00 – 11:30 AM</td><td>Music &amp; Movement</td></tr>
+          <tr><td>11:30 – 12:15 PM</td><td>Lunch</td></tr>
+          <tr><td>12:15 – 2:30 PM</td><td>Rest / Quiet Time</td></tr>
+          <tr><td>2:30 – 3:00 PM</td><td>Snack</td></tr>
+          <tr><td>3:00 – 4:30 PM</td><td>Enrichment Activities &amp; Outdoor Play</td></tr>
+          <tr><td>4:30 – 6:00 PM</td><td>Free Play &amp; Pickup</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="wrap">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="section-title">Moments From Our Classrooms</h2>
+      <p class="section-lead">A peek into the everyday joy, creativity, and friendships happening at Littles PreSchool.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item g1">📷<span class="label">Art &amp; Craft Time</span></div>
+        <div class="gallery-item g2">📷<span class="label">Outdoor Play</span></div>
+        <div class="gallery-item g3">📷<span class="label">Story Circle</span></div>
+        <div class="gallery-item g4">📷<span class="label">Music Class</span></div>
+        <div class="gallery-item g5">📷<span class="label">Sensory Play</span></div>
+        <div class="gallery-item g6">📷<span class="label">Field Trips</span></div>
+      </div>
+      <p class="gallery-note">Photo placeholders shown above — swap these blocks for real classroom photos.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="wrap">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="section-title">What Parents Are Saying</h2>
+      <p class="section-lead">We're proud of the trust families place in us every day.</p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The teachers genuinely love our daughter. She runs into class every morning excited to learn — we couldn't ask for more."</p>
+          <div class="who">
+            <div class="avatar" style="background:var(--coral);">M</div>
+            <div><strong>Maria S.</strong><small>Parent of a Preschooler</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Communication is amazing — daily photo updates and a caring staff that always makes time to talk with us at pickup."</p>
+          <div class="who">
+            <div class="avatar" style="background:var(--teal-dark);">D</div>
+            <div><strong>David K.</strong><small>Parent of a Toddler</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Our son started Pre-K here shy and unsure. A year later he's confident, reading his first words, and has so many friends."</p>
+          <div class="who">
+            <div class="avatar" style="background:var(--purple);">J</div>
+            <div><strong>Jasmine T.</strong><small>Parent of a Pre-K Student</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enroll -->
+  <section id="enroll">
+    <div class="wrap">
+      <span class="eyebrow">Enrollment</span>
+      <h2 class="section-title">Joining Littles Is Easy</h2>
+      <p class="section-lead">Four simple steps between you and a classroom full of new friends.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Schedule a Tour</h3>
+          <p>Visit our classrooms and meet the teachers.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Submit Application</h3>
+          <p>Fill out our simple enrollment packet online or in person.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Meet &amp; Greet</h3>
+          <p>Your child spends time in their new classroom before starting.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Welcome Day</h3>
+          <p>Your child officially joins the Littles family!</p>
+        </div>
+      </div>
+      <div class="enroll-cta">
+        <a href="#contact" class="btn btn-primary">Start Enrollment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="section-title">Visit or Contact Us</h2>
+        <ul class="info-list">
+          <li>
+            <div class="ic">📍</div>
+            <div><strong>Address</strong><span class="small">123 Sunshine Lane, Your City, ST 00000</span></div>
+          </li>
+          <li>
+            <div class="ic">📞</div>
+            <div><strong>Phone</strong><span class="small">(555) 123-4567</span></div>
+          </li>
+          <li>
+            <div class="ic">✉️</div>
+            <div><strong>Email</strong><span class="small">hello@littlespreschool.com</span></div>
+          </li>
+        </ul>
+        <div class="hours-box">
+          <h3>Hours of Operation</h3>
+          <div class="row"><span>Monday – Friday</span><span>7:00 AM – 6:00 PM</span></div>
+          <div class="row"><span>Saturday – Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! This is a demo form — connect it to your email or booking service.');">
+        <div class="form-row">
+          <div>
+            <label for="parentName">Parent Name</label>
+            <input id="parentName" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="childAge">Child's Age</label>
+            <input id="childAge" type="text" placeholder="e.g. 3 years">
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="(555) 555-5555">
+          </div>
+        </div>
+        <div class="full">
+          <label for="program">Program of Interest</label>
+          <select id="program">
+            <option>Infants (6 weeks – 12 months)</option>
+            <option>Toddlers (1 – 2 years)</option>
+            <option>Preschool (3 – 4 years)</option>
+            <option>Pre-K (4 – 5 years)</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Tell us a bit about your child, or ask us anything!"></textarea>
+        </div>
+        <button type="submit" class="btn btn-teal">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo">🌈 Littles.PreSchool</a>
+        <p style="font-size:0.9rem; max-width:280px;">A safe, joyful, play-based learning home for children 6 weeks through Pre-K.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#schedule">Daily Schedule</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Families</h4>
+        <ul>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#enroll">Enrollment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>123 Sunshine Lane<br>Your City, ST 00000</li>
+          <li>(555) 123-4567</li>
+          <li>hello@littlespreschool.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Littles PreSchool. All rights reserved.</span>
+      <span>Made with 💛 for little learners.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', function () {
+    var isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () { navLinks.classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
