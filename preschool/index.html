@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little's Preschool - Hood River, Oregon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 w-full shadow-md z-50 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img id="nav-logo" src="littlesdaycareimages/logo.jpeg" alt="Little's Preschool Logo" class="w-12 h-12 rounded-full object-cover cursor-pointer hover:opacity-80 transition" title="Click to expand">
+                    <div class="hidden sm:block">
+
+                        <h1 class="text-xl font-bold text-white" data-i18n="nav.daycare">Little's Preschool</h1>
+                        <p class="text-xs text-purple-300" data-i18n="nav.location">Hood River, OR</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex h-20"> 
+                    <a href="#home" class="flex items-center px-4 text-gray-200 hover:bg-gray-700 hover:text-purple-300 transition" data-i18n="nav.home">Home</a>
+                    <a href="#services" class="flex items-center px-4 text-gray-200 hover:bg-gray-700 hover:text-purple-300 transition" data-i18n="nav.services">Services</a>
+                    <a href="#about" class="flex items-center px-4 text-gray-200 hover:bg-gray-700 hover:text-purple-300 transition" data-i18n="nav.about">About</a>
+                    <a href="#why-choose" class="flex items-center px-4 text-gray-200 hover:bg-gray-700 hover:text-purple-300 transition" data-i18n="nav.why">Why Us</a>
+                    <a href="#contact" class="flex items-center px-4 text-gray-200 hover:bg-gray-700 hover:text-purple-300 transition" data-i18n="nav.contact">Contact</a>
+                </div>
+
+                <!-- Language Selector + Enroll Button (far right) -->
+                <div class="hidden md:flex items-center space-x-3 ml-auto pl-4">
+                    <a href="#contact" class="gradient-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition" data-i18n="nav.enroll">
+                        Enroll Now
+                    </a>
+                    <div class="hidden sm:flex language-selector">
+                        <button id="lang-en" class="lang-btn active" data-lang="en">🇺🇸 EN</button>
+                        <button id="lang-es" class="lang-btn" data-lang="es">🇲🇽 ES</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-200 hover:bg-gray-800" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-gray-900">
+                <a href="#home" class="block px-4 py-2 text-gray-200 hover:bg-gray-800" data-i18n="nav.home">Home</a>
+                <a href="#services" class="block px-4 py-2 text-gray-200 hover:bg-gray-800" data-i18n="nav.services">Services</a>
+                <a href="#about" class="block px-4 py-2 text-gray-200 hover:bg-gray-800" data-i18n="nav.about">About</a>
+                <a href="#why-choose" class="block px-4 py-2 text-gray-200 hover:bg-gray-800" data-i18n="nav.why">Why Choose Us</a>
+                <a href="#contact" class="block px-4 py-2 text-gray-200 hover:bg-gray-800" data-i18n="nav.contact">Contact</a>
+                <div class="flex gap-2 px-4 py-3">
+                    <button id="lang-en-mobile" class="lang-btn active flex-1" data-lang="en">🇺🇸 EN</button>
+                    <button id="lang-es-mobile" class="lang-btn flex-1" data-lang="es">🇲🇽 ES</button>
+                </div>
+                <a href="#contact" class="block px-4 py-3 gradient-primary text-white font-semibold m-2 rounded-full text-center" data-i18n="nav.enroll">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-with-logo-bg text-white py-24 sm:py-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-6 hero-gradient-text" data-i18n="hero.title">Welcome to Little's Preschool</h1>
+                <p class="text-lg sm:text-xl mb-8 leading-relaxed max-w-2xl mx-auto" style="color: #ffe9a0;" data-i18n="hero.subtitle">
+                    A warm, bilingual preschool in Hood River, Oregon where children ages 3–5 learn, grow, and thrive in a safe and loving environment.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-white text-purple-600 font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition" data-i18n="hero.start">Start Enrollment</a>
+                    <a href="#services" class="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-purple-700 transition" data-i18n="hero.learn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Teachers Section -->
+    <section id="teachers" class="py-8 sm:py-12" style="background-color: #f3eeff;">
+        <div class="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-4" data-i18n="teachers.title">Meet Our Teachers</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto" data-i18n="teachers.subtitle">Dedicated, caring educators who make every day special for your child.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <!-- Teacher Yaneli -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-md p-8 scroll-fade">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <img id="teacher1-photo" src="littlesdaycareimages/teacher2.jpeg" alt="Teacher Yaneli" class="w-32 h-32 rounded-full object-cover shadow-lg mb-4 border-4 border-purple-300 cursor-pointer hover:opacity-80 transition" title="Click to expand">
+                        <h3 class="text-2xl font-bold text-gray-800">Teacher Yaneli</h3>
+                        <p class="text-purple-600 font-medium text-sm mt-1" data-i18n="teachers.role">Preschool Teacher</p>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-5" data-i18n="teachers.yaneli.bio">
+                        Hi! I'm Yaneli and I'll be your preschool teacher this year. I am so excited to start a year filled with learning, creativity &amp; fun! I believe every student is unique and brings something special to our class. I can't wait to get to know you all.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 text-sm uppercase tracking-wide" data-i18n="teachers.aboutme">About Me</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="teachers.yaneli.about">
+                            I hold a Child Development Associate certificate and have 7 years of teaching experience. I'm also a proud mom of three — two daughters, Nevaeh (12) and Aaliyah (10), and a son, Ezrah (3). In my free time, I love cooking and making memories with my kids.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2" data-i18n="teachers.outside">Outside the Classroom</h4>
+                            <ul class="text-gray-600 space-y-1 list-disc list-inside">
+                                <li data-i18n="teachers.yaneli.out1">Taking trips to the beach</li>
+                                <li data-i18n="teachers.yaneli.out2">Thrifting</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2" data-i18n="teachers.favorites">Favorites</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li data-i18n="teachers.yaneli.fav1">🎨 Color: Black &amp; Pink</li>
+                                <li data-i18n="teachers.yaneli.fav2">🐱 Animal: Cat</li>
+                                <li data-i18n="teachers.yaneli.fav3">🥨 Snack: Pretzels &amp; Hummus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Deysi -->
+                <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl shadow-md p-8 scroll-fade">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <img id="teacher2-photo" src="littlesdaycareimages/teacher1.jpeg" alt="Teacher Deysi" class="w-32 h-32 rounded-full object-cover shadow-lg mb-4 border-4 border-blue-300 cursor-pointer hover:opacity-80 transition" title="Click to expand">
+                        <h3 class="text-2xl font-bold text-gray-800">Teacher Deysi</h3>
+                        <p class="text-blue-600 font-medium text-sm mt-1" data-i18n="teachers.role">Preschool Teacher</p>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-5" data-i18n="teachers.deysi.bio">
+                        Hi, my name is Deysi Esparza and I will be one of your preschool teachers. I am extremely excited to get to know you and for you to be a part of our classroom family this year. Together we will have a great year! P.s. I can't wait for you to meet my dog Arlo. 😊
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 text-sm uppercase tracking-wide" data-i18n="teachers.aboutme">About Me</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="teachers.deysi.about">
+                            I have my CDA (Child Development Associate) Certificate and have been working in a preschool setting since 2017. This will be my 3rd year teaching and I enjoy every second in the classroom. I really enjoy cooking, making art, and going on adventures inside and outside of the classroom.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2" data-i18n="teachers.outside">Outside the Classroom</h4>
+                            <ul class="text-gray-600 space-y-1 list-disc list-inside">
+                                <li data-i18n="teachers.deysi.out1">Spending time with family</li>
+                                <li data-i18n="teachers.deysi.out2">Going on walks &amp; hikes</li>
+                                <li data-i18n="teachers.deysi.out3">Collecting plants</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2" data-i18n="teachers.favorites">Favorites</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li data-i18n="teachers.deysi.fav1">🎨 Color: Black</li>
+                                <li data-i18n="teachers.deysi.fav2">🐢 Animal: Turtles</li>
+                                <li data-i18n="teachers.deysi.fav3">🍟 Snack: Chips</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patty Lara-Martinez -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl shadow-md p-8 scroll-fade">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <img id="teacher3-photo" src="littlesdaycareimages/Staff.jpeg" alt="Patty Lara-Martinez" class="w-32 h-32 rounded-full object-cover shadow-lg mb-4 border-4 border-yellow-300 cursor-pointer hover:opacity-80 transition" title="Click to expand">
+                        <h3 class="text-2xl font-bold text-gray-800">Patty Lara-Martinez</h3>
+                        <p class="text-yellow-600 font-medium text-sm mt-1" data-i18n="teachers.patty.role">Assistant Director</p>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-5" data-i18n="teachers.patty.bio">
+                        Hi, I'm Patty! I have an Associate of Applied Science in Criminal Justice and bring over 10 years of experience in community outreach and grant management.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 text-sm uppercase tracking-wide" data-i18n="teachers.aboutme">About Me</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed" data-i18n="teachers.patty.about">
+                            Throughout my career, I have had the opportunity to work closely with individuals, families, and community partners, helping connect people with resources and creating stronger relationships within our community. My experience in outreach and program support has taught me the importance of communication, compassion, organization, and making sure every family feels welcomed and supported. At Littles Preschool, I'm excited to bring my experience into a role where I can support our children, families, teachers, and the continued growth of our program. I'm proud to be part of creating a warm and inclusive environment where families feel connected and every child has the opportunity to learn, grow, and thrive.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Staff Member 4 (placeholder - update with real info) -->
+                <div class="bg-gradient-to-br from-pink-50 to-red-50 rounded-2xl shadow-md p-8 scroll-fade">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <img id="teacher4-photo" src="littlesdaycareimages/Staff.jpeg" alt="Staff Member" class="w-32 h-32 rounded-full object-cover shadow-lg mb-4 border-4 border-pink-300 cursor-pointer hover:opacity-80 transition" title="Click to expand">
+                        <h3 class="text-2xl font-bold text-gray-800">[Staff Name]</h3>
+                        <p class="text-pink-600 font-medium text-sm mt-1" data-i18n="teachers.role">Preschool Teacher</p>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                        [Bio coming soon.]
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-gray-800 mb-2 text-sm uppercase tracking-wide" data-i18n="teachers.aboutme">About Me</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            [About me coming soon.]
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2" data-i18n="teachers.outside">Outside the Classroom</h4>
+                            <ul class="text-gray-600 space-y-1 list-disc list-inside">
+                                <li>[Coming soon]</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2" data-i18n="teachers.favorites">Favorites</h4>
+                            <ul class="text-gray-600 space-y-1">
+                                <li>[Coming soon]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-8 sm:py-12" style="background-color: #f3eeff;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-4" data-i18n="services.title">Our Services</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-i18n="services.subtitle">Comprehensive childcare programs tailored to meet the developmental needs of every child</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition scroll-fade">
+                    <img src="littlesdaycareimages/Daycare1.jpeg" alt="Infant Care" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="gradient-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-baby text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="services.infant.title">Infant Care</h3>
+                        <p class="text-gray-600" data-i18n="services.infant.desc">Specialized care for infants 6 weeks - 12 months with personalized attention and developmental activities.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition scroll-fade">
+                    <img src="littlesdaycareimages/Daycare2.jpeg" alt="Toddler Program" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="gradient-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-child text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="services.toddler.title">Toddler Program</h3>
+                        <p class="text-gray-600" data-i18n="services.toddler.desc">Engaging curriculum for toddlers 12-24 months featuring music, sensory play, and social skills development.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition scroll-fade">
+                    <img src="littlesdaycareimages/Daycare4.jpeg" alt="Preschool" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="gradient-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-book text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="services.preschool.title">Preschool</h3>
+                        <p class="text-gray-600" data-i18n="services.preschool.desc">Educational preschool for ages 2-4 with focus on pre-literacy, math foundations, and independence.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition scroll-fade">
+                    <img src="littlesdaycareimages/Daycare5.jpeg" alt="Meal Programs" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="gradient-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="services.meals.title">Meal Programs</h3>
+                        <p class="text-gray-600" data-i18n="services.meals.desc">We provide AM and PM snacks daily. Families provide lunch. We accommodate dietary restrictions and allergies.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition scroll-fade">
+                    <img src="littlesdaycareimages/Daycare7.jpeg" alt="Enrichment Activities" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="gradient-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-gamepad text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="services.enrichment.title">Enrichment Activities</h3>
+                        <p class="text-gray-600" data-i18n="services.enrichment.desc">Music, art, outdoor play, and STEM activities promoting creativity and cognitive development.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition scroll-fade">
+                    <img src="littlesdaycareimages/Daycare8.jpeg" alt="Flexible Scheduling" class="w-full h-40 object-cover">
+                    <div class="p-6">
+                        <div class="gradient-primary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="services.flexible.title">Flexible Scheduling</h3>
+                        <p class="text-gray-600" data-i18n="services.flexible.desc">Full-time, part-time, and drop-in options to accommodate your family's unique needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-8 sm:py-12" style="background-color: #f3eeff;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="scroll-fade">
+                    <img src="littlesdaycareimages/Daycare10.jpeg" alt="Littles DayCare center" class="w-full h-96 object-cover rounded-lg shadow-md mb-6">
+                </div>
+                <div class="scroll-fade">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6" data-i18n="about.title">About Little's Preschool</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="about.p1">
+                        Little's Preschool is committed to providing a safe, nurturing, and stimulating environment where children can grow, learn, and thrive. Our dedicated team of experienced educators is passionate about fostering each child's unique potential.
+                    </p>
+                    <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="about.p2">
+                        Located in beautiful Hood River, Oregon, we combine evidence-based early childhood practices with play-based learning to support the developmental milestones of infants through preschoolers.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="about.p3">
+                        We believe that quality childcare is a partnership between our educators and your family. We're committed to open communication, transparency, and creating an environment where every child feels valued and supported.
+                    </p>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-purple-600 text-xl"></i>
+                        <span class="text-gray-700" data-i18n="about.licensed">Fully Licensed & Insured</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="gradient-primary text-white p-6 rounded-lg text-center scroll-fade">
+                        <h3 class="text-4xl font-bold mb-2">15+</h3>
+                        <p class="text-orange-100" data-i18n="about.experience">Years Combined Experience</p>
+                    </div>
+                    <div class="text-white p-6 rounded-lg text-center scroll-fade" style="background: linear-gradient(135deg, #a78bcf 0%, #c9a0f0 100%)">
+                        <h3 class="text-4xl font-bold mb-2">50+</h3>
+                        <p class="text-purple-100" data-i18n="about.children">Children Served</p>
+                    </div>
+                    <div class="text-white p-6 rounded-lg text-center scroll-fade" style="background: linear-gradient(135deg, #e07aaa 0%, #f0a0c8 100%)">
+                        <h3 class="text-4xl font-bold mb-2">24/7</h3>
+                        <p class="text-green-100" data-i18n="about.communication">Parent Communication</p>
+                    </div>
+                    <div class="bg-purple-500 text-white p-6 rounded-lg text-center scroll-fade">
+                        <h3 class="text-4xl font-bold mb-2">100%</h3>
+                        <p class="text-purple-100" data-i18n="about.love">Love & Care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="py-8 sm:py-12" style="background-color: #f3eeff;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-4" data-i18n="why.title">Why Choose Little's Preschool?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-i18n="why.subtitle">What sets us apart from other childcare providers</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex gap-4 scroll-fade">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.staff.title">Experienced Staff</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.staff.desc">Our certified caregivers receive ongoing professional development and training in child development.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 scroll-fade">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.warm.title">Warm Environment</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.warm.desc">We create a home-like atmosphere that feels safe, welcoming, and encourages emotional development.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 scroll-fade">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.learning.title">Learning-Focused</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.learning.desc">We blend play-based learning with curriculum activities supporting cognitive, social, and motor development.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 scroll-fade">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.safe.title">Safe & Secure</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.safe.desc">Top priority on safety with clean facilities, secure building, and rigorous health protocols.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 scroll-fade">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.family.title">Family Partnership</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.family.desc">Regular communication, progress reports, and partnership with parents in each child's development.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 scroll-fade">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.nature.title">Nature & Community</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.nature.desc">Located in Hood River, Oregon with outdoor play, nature exploration, and community involvement opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 scroll-fade md:col-span-2">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md gradient-primary text-white">
+                            <i class="fas fa-language"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800" data-i18n="why.bilingual.title">Bilingual Care</h3>
+                        <p class="text-gray-600 mt-2" data-i18n="why.bilingual.desc">Our staff is fluent in both English and Spanish, ensuring every family and child feels fully understood and welcomed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Image Gallery -->
+        <section id="gallery" class="py-8 sm:py-12" style="background-color: #f3eeff;">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-4" data-i18n="gallery.title">Gallery</h2>
+                        <p class="text-center text-gray-600 mb-10 max-w-2xl mx-auto" data-i18n="gallery.subtitle">Explore moments from our preschool community.</p>
+
+                        <div class="gallery-grid">
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 1">
+                                        <img src="littlesdaycareimages/Daycare1.jpeg" alt="Children activity 1" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 2">
+                                        <img src="littlesdaycareimages/Daycare2.jpeg" alt="Children activity 2" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 3">
+                                        <img src="littlesdaycareimages/Daycare4.jpeg" alt="Children activity 3" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 4">
+                                        <img src="littlesdaycareimages/Daycare5.jpeg" alt="Children activity 4" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 5">
+                                        <img src="littlesdaycareimages/Daycare6.JPG" alt="Children activity 5" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 6">
+                                        <img src="littlesdaycareimages/Daycare7.jpeg" alt="Children activity 6" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 7">
+                                        <img src="littlesdaycareimages/Daycare8.jpeg" alt="Children activity 7" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 8">
+                                        <img src="littlesdaycareimages/Daycare9.jpeg" alt="Children activity 8" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item" aria-label="Open gallery image 9">
+                                        <img src="littlesdaycareimages/Daycare10.jpeg" alt="Children activity 9" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 10">
+                                        <img src="littlesdaycareimages/IMG_0186.jpeg" alt="Children playing with wooden train tracks" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 11">
+                                        <img src="littlesdaycareimages/IMG_0187.jpeg" alt="Children building with wooden train tracks" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 12">
+                                        <img src="littlesdaycareimages/IMG_5667.jpeg" alt="Two boys smiling in Valentine's Day headbands" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 13">
+                                        <img src="littlesdaycareimages/IMG_5669.jpeg" alt="Children reading books together" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 14">
+                                        <img src="littlesdaycareimages/IMG_5670.jpeg" alt="Children dancing with colorful scarves" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 15">
+                                        <img src="littlesdaycareimages/IMG_5672.jpeg" alt="Snack time with teacher and children" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 16">
+                                        <img src="littlesdaycareimages/IMG_5673.jpeg" alt="Children building a wooden block tower" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 17">
+                                        <img src="littlesdaycareimages/IMG_5674.jpeg" alt="Children posing with their wooden block tower" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 18">
+                                        <img src="littlesdaycareimages/IMG_5675.jpeg" alt="Te Amo Party class celebration" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 19">
+                                        <img src="littlesdaycareimages/IMG_5676.jpeg" alt="Child working with woodworking tools" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 20">
+                                        <img src="littlesdaycareimages/IMG_5677.jpeg" alt="Child swinging at a piñata outdoors" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 21">
+                                        <img src="littlesdaycareimages/IMG_5678.jpeg" alt="Child hitting a piñata outdoors" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 22">
+                                        <img src="littlesdaycareimages/IMG_5679.jpeg" alt="Children playing with an ocean-themed puzzle" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 23">
+                                        <img src="littlesdaycareimages/IMG_5601.jpeg" alt="Families gathered at a preschool celebration" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 24">
+                                        <img src="littlesdaycareimages/IMG_5602.jpeg" alt="Families gathered at a preschool celebration" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 25">
+                                        <img src="littlesdaycareimages/IMG_5603.jpeg" alt="Balloon decorations at a preschool celebration" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 26">
+                                        <img src="littlesdaycareimages/IMG_5604.jpeg" alt="Class gathered on the world map rug" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 27">
+                                        <img src="littlesdaycareimages/IMG_9603.jpeg" alt="Graduating preschoolers in caps and gowns" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 28">
+                                        <img src="littlesdaycareimages/IMG_9621.jpeg" alt="Graduating preschoolers with their teachers" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 29">
+                                        <img src="littlesdaycareimages/IMG_9631.jpeg" alt="Teachers celebrating with balloon decorations" class="gallery-click">
+                                </button>
+                                <button type="button" class="gallery-item gallery-extra" aria-label="Open gallery image 30">
+                                        <img src="littlesdaycareimages/80289520793__9308C305-B1B2-41ED-B3D2-CD99048AD1E9.jpeg" alt="Colorful rainbow balloon arch decoration" class="gallery-click">
+                                </button>
+                        </div>
+
+                        <div class="text-center mt-10">
+                                <button type="button" id="gallery-toggle" class="gallery-toggle-btn">
+                                        <span>View More Photos</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                </button>
+                        </div>
+                </div>
+        </section>
+
+        <div id="gallery-lightbox" class="gallery-lightbox" aria-hidden="true">
+                <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close gallery">&times;</button>
+                <button type="button" id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous image">
+                        <i class="fas fa-chevron-left"></i>
+                </button>
+                <img id="lightbox-image" class="lightbox-image" src="" alt="Gallery preview">
+                <button type="button" id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next image">
+                        <i class="fas fa-chevron-right"></i>
+                </button>
+                <p id="lightbox-counter" class="lightbox-counter"></p>
+        </div>
+    <!-- Age Groups Section -->
+    <section class="py-8 sm:py-12" style="background-color: #f3eeff;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-4" data-i18n="ages.title">How Old Is Your Child?</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-i18n="ages.subtitle">We provide specialized care for every age group</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg shadow-md p-6 text-center scroll-fade hover:shadow-lg transition">
+                    <img src="littlesdaycareimages/Daycare4.jpeg" alt="Preschool" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <div class="w-16 h-16 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2" data-i18n="ages.preschool">Preschool</h3>
+                    <p class="text-gray-600" data-i18n="ages.preschool.range">3 – 4 years</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-lg shadow-md p-6 text-center scroll-fade hover:shadow-lg transition">
+                    <img src="littlesdaycareimages/Daycare5.jpeg" alt="Pre-K" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <div class="w-16 h-16 bg-pink-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2" data-i18n="ages.prek">Pre-K</h3>
+                    <p class="text-gray-600" data-i18n="ages.prek.range">4 – 5 years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-8 sm:py-12" style="background-color: #f3eeff;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-12" data-i18n="faq.title">Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-lg shadow-md scroll-fade">
+                    <button class="faq-question w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition flex items-center justify-between">
+                        <span data-i18n="faq.q1">What are your opening hours?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="p-6 text-gray-600" data-i18n="faq.a1">We are open Monday–Thursday from 7:45 AM to 5:00 PM.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md scroll-fade">
+                    <button class="faq-question w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition flex items-center justify-between">
+                        <span data-i18n="faq.q2">What age groups do you care for?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="p-6 text-gray-600" data-i18n="faq.a2">We serve children ages 3–5 years old, with programs for Preschool (3–4) and Pre-K (4–5).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md scroll-fade">
+                    <button class="faq-question w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition flex items-center justify-between">
+                        <span data-i18n="faq.q3">Do you provide meals?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="p-6 text-gray-600" data-i18n="faq.a3">We provide AM and PM snacks daily. Families provide lunch. We accommodate dietary restrictions and allergies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md scroll-fade">
+                    <button class="faq-question w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition flex items-center justify-between">
+                        <span data-i18n="faq.q4">What safety measures are in place?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="p-6 text-gray-600" data-i18n="faq.a4">We follow all Oregon state licensing requirements. Our measures include secure entry/exit, trained staff, regular health inspections, emergency protocols, and strict cleaning routines.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md scroll-fade">
+                    <button class="faq-question w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition flex items-center justify-between">
+                        <span data-i18n="faq.q5">Is parking available?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="p-6 text-gray-600" data-i18n="faq.a5">Yes, convenient parking is available on-site for drop-off and pick-up. We also offer flexible scheduling to make transitions easier.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-lg shadow-md scroll-fade">
+                    <button class="faq-question w-full p-6 text-left font-semibold text-gray-800 hover:bg-gray-50 transition flex items-center justify-between">
+                        <span data-i18n="faq.q6">How do you communicate with parents?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="p-6 text-gray-600" data-i18n="faq.a6">We believe in open communication! We provide daily updates, regular progress reports, parent-teacher conferences, and are always available for questions. We're committed to keeping you informed every step of the way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-8 sm:py-12" style="background: linear-gradient(180deg, #f3eeff 0%, #f3eeff 40%, #c9b8e8 55%, #8B6BB1 70%, #6B4C9A 85%, #4a3270 100%);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-purple-800 mb-4" data-i18n="contact.title">Get In Touch</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-i18n="contact.subtitle">Ready to give your child a wonderful childcare experience? Contact us today!</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="scroll-fade">
+                    <div class="mb-8 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-30">
+                    <h3 class="text-2xl font-bold text-purple-900 mb-4" data-i18n="contact.info">Contact Information</h3>
+                    <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-map-marker-alt text-purple-800 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-purple-900" data-i18n="contact.address">Address</h4>
+                                    <a href="https://maps.google.com/?q=317+State+St,+Hood+River,+OR+97031" target="_blank" rel="noopener noreferrer" class="text-purple-800 hover:text-purple-600 font-medium" data-i18n="contact.addressValue">317 State St, Hood River, OR 97031</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-phone text-purple-800 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-purple-900" data-i18n="contact.phone">Phone</h4>
+                                    <a href="tel:+15038604570" class="text-purple-800 hover:text-purple-600 font-medium">(503) 860-4570</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-envelope text-purple-800 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-purple-900" data-i18n="contact.email">Email</h4>
+                                    <a href="mailto:Marina@littlepreschool.com" class="text-purple-800 hover:text-purple-600 font-medium">Marina@littlepreschool.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-clock text-purple-800 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-purple-900" data-i18n="contact.hours">Hours</h4>
+                                    <p class="text-purple-800 font-medium" data-i18n="contact.hoursM">Monday – Thursday</p>
+                                    <p class="text-purple-800 font-medium" data-i18n="contact.hoursT">7:45 AM – 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contact-form" class="bg-white bg-opacity-80 border border-purple-200 p-5 rounded-2xl shadow-md scroll-fade" action="https://formspree.io/f/xyzbqqyp" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="block text-xs font-semibold text-gray-700 mb-1" data-i18n="contact.name">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600" data-i18n="contact.namePlaceholder" placeholder="Your name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="block text-xs font-semibold text-gray-700 mb-1" data-i18n="contact.emailLabel">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600" data-i18n="contact.emailPlaceholder" placeholder="your@email.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="block text-xs font-semibold text-gray-700 mb-1" data-i18n="contact.phoneLabel">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600" data-i18n="contact.phonePlaceholder" placeholder="(541) 555-1234">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="child-age" class="block text-xs font-semibold text-gray-700 mb-1" data-i18n="contact.childAge">Child's Age</label>
+                        <select id="child-age" name="child-age" required class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600">
+                            <option value="" data-i18n="contact.childAgeSelect">Select age group</option>
+                            <option value="infant" data-i18n="contact.childAge0">3-5 years old (Youth)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="message" class="block text-xs font-semibold text-gray-700 mb-1" data-i18n="contact.message">Message</label>
+                        <textarea id="message" name="message" required rows="3" class="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600" data-i18n="contact.messagePlaceholder" placeholder="Tell us about your needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full gradient-primary text-white font-semibold py-2 text-sm rounded-lg hover:shadow-lg transition" data-i18n="contact.send">
+                        Send Inquiry
+                    </button>
+                </form>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div class="mt-12 rounded-lg overflow-hidden shadow-md h-80 sm:h-96 scroll-fade">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5819396289377!2d-123.19165232346982!3d45.29350457104908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ce4f8c8f8f8f8f%3A0x8f8f8f8f8f8f8f8f!2sHood%20River%2C%20OR!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4" data-i18n="nav.daycare">Little's Preschool</h4>
+                    <p class="text-gray-400 text-sm" data-i18n="footer.desc">Nurturing young minds and caring for our community's children since opening in Hood River, Oregon.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-white" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white" data-i18n="nav.about">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-i18n="footer.servicesTitle">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="text-gray-400 hover:text-white" data-i18n="footer.infantCare">Infant Care</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white" data-i18n="footer.toddlerProgram">Toddler Program</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white" data-i18n="footer.preschoolFooter">Preschool</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white" data-i18n="footer.activities">Activities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4" data-i18n="footer.follow">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=61587669502363" class="text-gray-400 hover:text-purple-600 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-purple-600 text-xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center sm:text-left text-sm text-gray-400">
+                    <p data-i18n="footer.copyright">&copy; 2026 Little's Preschool. All rights reserved.</p>
+                    <div class="flex justify-center sm:justify-end space-x-4">
+                        <a href="#" class="hover:text-white" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="#" class="hover:text-white" data-i18n="footer.terms">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.services': 'Services',
+                'nav.about': 'About',
+                'nav.why': 'Why Us',
+                'nav.contact': 'Contact',
+                'nav.enroll': 'Enroll Now',
+                'nav.location': 'Hood River, OR',
+                'nav.daycare': 'Little\'s Preschool',
+                
+                'hero.title': 'Welcome to Little\'s Preschool',
+                'hero.subtitle': "Where every child's potential blooms. Discover a nurturing environment designed for growth, learning, and joy.",
+                'hero.start': 'Start Enrollment',
+                'hero.learn': 'Learn More',
+                
+                'services.title': 'Our Services',
+                'services.subtitle': 'Comprehensive childcare programs tailored to meet the developmental needs of every child',
+                'services.infant.title': 'Infant Care',
+                'services.infant.desc': 'Specialized care for infants 6 weeks - 12 months with personalized attention and developmental activities.',
+                'services.toddler.title': 'Toddler Program',
+                'services.toddler.desc': 'Engaging curriculum for toddlers 12-24 months featuring music, sensory play, and social skills development.',
+                'services.preschool.title': 'Preschool',
+                'services.preschool.desc': 'Educational preschool for ages 2-4 with focus on pre-literacy, math foundations, and independence.',
+                'services.meals.title': 'Meal Programs',
+                'services.meals.desc': 'We provide AM and PM snacks daily. Families provide lunch. We accommodate dietary restrictions and allergies.',
+                'services.enrichment.title': 'Enrichment Activities',
+                'services.enrichment.desc': 'Music, art, outdoor play, and STEM activities promoting creativity and cognitive development.',
+                'services.flexible.title': 'Flexible Scheduling',
+                'services.flexible.desc': "Full-time, part-time, and drop-in options to accommodate your family's unique needs.",
+                
+                'about.title': 'About Little\'s Preschool',
+                'about.p1': "Little\'s Preschool is committed to providing a safe, nurturing, and stimulating environment where children can grow, learn, and thrive. Our dedicated team of experienced educators is passionate about fostering each child's unique potential.",
+                'about.p2': "Located in beautiful Hood River, Oregon, we combine evidence-based early childhood practices with play-based learning to support the developmental milestones of infants through preschoolers.",
+                'about.p3': "We believe that quality childcare is a partnership between our educators and your family. We're committed to open communication, transparency, and creating an environment where every child feels valued and supported.",
+                'about.licensed': 'Fully Licensed & Insured',
+                'about.experience': 'Years Combined Experience',
+                'about.children': 'Children Served',
+                'about.communication': 'Parent Communication',
+                'about.love': 'Love & Care',
+                
+                'why.title': 'Why Choose Little\'s Preschool?',
+                'why.subtitle': 'What sets us apart from other childcare providers',
+                'why.staff.title': 'Experienced Staff',
+                'why.staff.desc': 'Our certified caregivers receive ongoing professional development and training in child development.',
+                'why.warm.title': 'Warm Environment',
+                'why.warm.desc': 'We create a home-like atmosphere that feels safe, welcoming, and encourages emotional development.',
+                'why.learning.title': 'Learning-Focused',
+                'why.learning.desc': 'We blend play-based learning with curriculum activities supporting cognitive, social, and motor development.',
+                'why.safe.title': 'Safe & Secure',
+                'why.safe.desc': 'Top priority on safety with clean facilities, secure building, and rigorous health protocols.',
+                'why.family.title': 'Family Partnership',
+                'why.family.desc': "Regular communication, progress reports, and partnership with parents in each child's development.",
+                'why.nature.title': 'Nature & Community',
+                'why.nature.desc': 'Located in Hood River with outdoor play, nature exploration, and community involvement opportunities.',
+                'why.bilingual.title': 'Bilingual Care',
+                'why.bilingual.desc': 'Our staff is fluent in both English and Spanish, ensuring every family and child feels fully understood and welcomed.',
+                
+                'testimonials.title': 'What Parents Say',
+                'testimonials.subtitle': 'Hear from families who trust us with their most precious treasures',
+                'testimonials.1': "Our daughter has blossomed at Little's Preschool. The staff is caring and the activities are engaging. We couldn't ask for more!",
+                'testimonials.1.name': '- Sarah M., Parent',
+                'testimonials.2': "Peace of mind knowing my son is in such a loving and safe environment. The communication is excellent. Highly recommended!",
+                'testimonials.2.name': '- James R., Parent',
+                'testimonials.3': "Best childcare decision we've made! The team at Little's Preschool goes above and beyond. We trust them completely.",
+                'testimonials.3.name': '- Michelle T., Parent',
+                
+                'ages.title': "How Old Is Your Child?",
+                'ages.subtitle': 'We provide specialized care for children ages 3–5',
+                'ages.preschool': 'Preschool',
+                'ages.preschool.range': '3 – 4 years',
+                'ages.prek': 'Pre-K',
+                'ages.prek.range': '4 – 5 years',
+                
+                'faq.title': 'Frequently Asked Questions',
+                'faq.q1': 'What are your opening hours?',
+                'faq.a1': 'We are open Monday–Thursday from 7:45 AM to 5:00 PM.',
+                'faq.q2': 'What age groups do you care for?',
+                'faq.a2': 'We serve children ages 3–5 years old, with programs for Preschool (3–4) and Pre-K (4–5).',
+                'faq.q3': 'Do you provide meals?',
+                'faq.a3': 'We provide AM and PM snacks daily. Families provide lunch. We accommodate dietary restrictions and allergies.',
+                'faq.q4': 'What safety measures are in place?',
+                'faq.a4': 'We follow all Oregon state licensing requirements. Our measures include secure entry/exit, trained staff, regular health inspections, emergency protocols, and strict cleaning routines.',
+                'faq.q5': 'Is parking available?',
+                'faq.a5': 'Yes, convenient parking is available on-site for drop-off and pick-up. We also offer flexible scheduling to make transitions easier.',
+                'faq.q6': 'How do you communicate with parents?',
+                'faq.a6': "We believe in open communication! We provide daily updates, regular progress reports, parent-teacher conferences, and are always available for questions. We're committed to keeping you informed every step of the way.",
+                
+                'contact.title': 'Get In Touch',
+                'contact.subtitle': "Ready to give your child a wonderful childcare experience? Contact us today!",
+                'contact.info': 'Contact Information',
+                'contact.address': 'Address',
+                'contact.addressValue': '317 State St, Hood River, OR 97031',
+                'contact.phone': 'Phone',
+                'contact.email': 'Email',
+                'contact.hours': 'Hours',
+                'contact.hoursM': 'Monday – Thursday',
+                'contact.hoursT': '7:45 AM – 5:00 PM',
+                'contact.name': 'Full Name',
+                'contact.namePlaceholder': 'Your name',
+                'contact.emailLabel': 'Email Address',
+                'contact.emailPlaceholder': 'your@email.com',
+                'contact.phoneLabel': 'Phone Number',
+                'contact.phonePlaceholder': '(503) 860-4570',
+                'contact.childAge': "Child's Age",
+                'contact.childAgeSelect': 'Select age group',
+                'contact.childAge0': '0-12 months (Infant)',
+                'contact.childAge1': '12-24 months (Toddler)',
+                'contact.childAge2': '2-4 years (Preschool)',
+                'contact.message': 'Message',
+                'contact.messagePlaceholder': 'Tell us about your needs...',
+                'contact.send': 'Send Inquiry',
+                
+                'footer.desc': "Nurturing young minds and caring for our community's children since opening in Hood River, Oregon.",
+                'footer.quickLinks': 'Quick Links',
+                'footer.servicesTitle': 'Services',
+                'footer.infantCare': 'Infant Care',
+                'footer.toddlerProgram': 'Toddler Program',
+                'footer.preschoolFooter': 'Preschool',
+                'footer.activities': 'Activities',
+                'footer.follow': 'Follow Us',
+                'footer.copyright': '© 2026 Little\'s Preschool. All rights reserved.',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms & Conditions',
+
+                'teachers.title': 'Meet Our Teachers',
+                'teachers.subtitle': 'Dedicated, caring educators who make every day special for your child.',
+                'teachers.role': 'Preschool Teacher',
+                'teachers.aboutme': 'About Me',
+                'teachers.outside': 'Outside the Classroom',
+                'teachers.favorites': 'Favorites',
+                'teachers.yaneli.bio': "Hi! I'm Yaneli and I'll be your preschool teacher this year. I am so excited to start a year filled with learning, creativity & fun! I believe every student is unique and brings something special to our class. I can't wait to get to know you all.",
+                'teachers.yaneli.about': "I hold a Child Development Associate certificate and have 7 years of teaching experience. I'm also a proud mom of three — two daughters, Nevaeh (12) and Aaliyah (10), and a son, Ezrah (3). In my free time, I love cooking and making memories with my kids.",
+                'teachers.yaneli.out1': 'Taking trips to the beach',
+                'teachers.yaneli.out2': 'Thrifting',
+                'teachers.yaneli.fav1': '🎨 Color: Black & Pink',
+                'teachers.yaneli.fav2': '🐱 Animal: Cat',
+                'teachers.yaneli.fav3': '🥨 Snack: Pretzels & Hummus',
+                'teachers.deysi.bio': "Hi, my name is Deysi Esparza and I will be one of your preschool teachers. I am extremely excited to get to know you and for you to be a part of our classroom family this year. Together we will have a great year! P.s. I can't wait for you to meet my dog Arlo. 😊",
+                'teachers.deysi.about': 'I have my CDA (Child Development Associate) Certificate and have been working in a preschool setting since 2017. This will be my 3rd year teaching and I enjoy every second in the classroom. I really enjoy cooking, making art, and going on adventures inside and outside of the classroom.',
+                'teachers.deysi.out1': 'Spending time with family',
+                'teachers.deysi.out2': 'Going on walks & hikes',
+                'teachers.deysi.out3': 'Collecting plants',
+                'teachers.deysi.fav1': '🎨 Color: Black',
+                'teachers.deysi.fav2': '🐢 Animal: Turtles',
+                'teachers.deysi.fav3': '🍟 Snack: Chips',
+                'teachers.patty.role': 'Assistant Director',
+                'teachers.patty.bio': "Hi, I'm Patty! I have an Associate of Applied Science in Criminal Justice and bring over 10 years of experience in community outreach and grant management.",
+                'teachers.patty.about': "Throughout my career, I have had the opportunity to work closely with individuals, families, and community partners, helping connect people with resources and creating stronger relationships within our community. My experience in outreach and program support has taught me the importance of communication, compassion, organization, and making sure every family feels welcomed and supported. At Littles Preschool, I'm excited to bring my experience into a role where I can support our children, families, teachers, and the continued growth of our program. I'm proud to be part of creating a warm and inclusive environment where families feel connected and every child has the opportunity to learn, grow, and thrive.",
+
+                'gallery.title': 'Gallery',
+                'gallery.subtitle': 'Explore moments from our preschool community.',
+            },
+            es: {
+                'nav.home': 'Inicio',
+                'nav.services': 'Servicios',
+                'nav.about': 'Acerca de',
+                'nav.why': 'Por Qué Nosotros',
+                'nav.contact': 'Contacto',
+                'nav.enroll': 'Inscribirse Ahora',
+                'nav.location': 'Hood River, OR',
+                'nav.daycare': 'Little\'s Preschool',
+                
+                'hero.title': 'Bienvenido a Little\'s Preschool',
+                'hero.subtitle': "Donde el potencial de cada niño florece. Descubre un entorno de crianza diseñado para el crecimiento, aprendizaje y alegría.",
+                'hero.start': 'Comenzar Inscripción',
+                'hero.learn': 'Aprende Más',
+                
+                'services.title': 'Nuestros Servicios',
+                'services.subtitle': 'Programas de cuidado infantil integral adaptados a las necesidades del desarrollo de cada niño',
+                'services.infant.title': 'Cuidado de Bebés',
+                'services.infant.desc': 'Cuidado especializado para bebés de 6 semanas a 12 meses con atención personalizada y actividades de desarrollo.',
+                'services.toddler.title': 'Programa de Niños Pequeños',
+                'services.toddler.desc': 'Currículo atractivo para niños pequeños de 12-24 meses con música, juego sensorial y desarrollo de habilidades sociales.',
+                'services.preschool.title': 'Preescolar',
+                'services.preschool.desc': 'Preescolar educativo para edades de 2-4 años con enfoque en pre-lectura, fundamentos matemáticos e independencia.',
+                'services.meals.title': 'Programas de Comidas',
+                'services.meals.desc': 'Proporcionamos un refrigerio por la mañana y otro por la tarde. Las familias traen el almuerzo. Acomodamos restricciones dietéticas y alergias.',
+                'services.enrichment.title': 'Actividades de Enriquecimiento',
+                'services.enrichment.desc': 'Actividades de música, arte, juego al aire libre y STEM que promueven la creatividad y el desarrollo cognitivo.',
+                'services.flexible.title': 'Horarios Flexibles',
+                'services.flexible.desc': "Opciones de tiempo completo, tiempo parcial y acceso ocasional para adaptarse a las necesidades únicas de su familia.",
+                
+                'about.title': 'Acerca de Little\'s Preschool',
+                'about.p1': "Little\'s Preschool se compromete a proporcionar un entorno seguro, de apoyo y estimulante donde los niños puedan crecer, aprender y prosperar. Nuestro equipo dedicado de educadores experimentados es apasionado al fomentar el potencial único de cada niño.",
+                'about.p2': "Ubicado en la hermosa Hood River, Oregón, combinamos prácticas de primera infancia basadas en evidencia con aprendizaje basado en el juego para apoyar los hitos del desarrollo de bebés y niños en edad preescolar.",
+                'about.p3': "Creemos que el cuidado infantil de calidad es una asociación entre nuestros educadores y su familia. Estamos comprometidos con la comunicación abierta, la transparencia y la creación de un entorno donde cada niño se sienta valorado y apoyado.",
+                'about.licensed': 'Totalmente Licenciado y Asegurado',
+                'about.experience': 'Años de Experiencia Combinada',
+                'about.children': 'Niños Servidos',
+                'about.communication': 'Comunicación con Padres',
+                'about.love': 'Amor y Cuidado',
+                
+                'why.title': '¿Por Qué Elegir Little\'s Preschool?',
+                'why.subtitle': 'Lo que nos diferencia de otros proveedores de cuidado infantil',
+                'why.staff.title': 'Personal Experimentado',
+                'why.staff.desc': 'Nuestros cuidadores certificados reciben desarrollo profesional continuo y capacitación en desarrollo infantil.',
+                'why.warm.title': 'Ambiente Cálido',
+                'why.warm.desc': 'Creamos una atmósfera similar a la del hogar que se siente segura, acogedora y fomenta el desarrollo emocional.',
+                'why.learning.title': 'Enfocado en el Aprendizaje',
+                'why.learning.desc': 'Combinamos el aprendizaje basado en el juego con actividades de currículo que apoyan el desarrollo cognitivo, social y motor.',
+                'why.safe.title': 'Seguro y Protegido',
+                'why.safe.desc': 'La máxima prioridad en seguridad con instalaciones limpias, edificio seguro y protocolos de salud rigurosos.',
+                'why.family.title': 'Asociación Familiar',
+                'why.family.desc': "Comunicación regular, informes de progreso y asociación con los padres en el desarrollo de cada niño.",
+                'why.nature.title': 'Naturaleza y Comunidad',
+                'why.nature.desc': 'Ubicado en Hood River con juego al aire libre, exploración de la naturaleza y oportunidades de participación comunitaria.',
+                'why.bilingual.title': 'Atención Bilingüe',
+                'why.bilingual.desc': 'Nuestro personal habla inglés y español con fluidez, garantizando que cada familia y niño se sienta comprendido y bienvenido.',
+                
+                'testimonials.title': '¿Qué Dicen los Padres?',
+                'testimonials.subtitle': 'Escucha de familias que nos confían sus tesoros más preciosos',
+                'testimonials.1': "Mi hija ha florecido en Littles DayCare. El personal es atencioso y las actividades son atractivas. ¡No podríamos pedir más!",
+                'testimonials.1.name': '- Sarah M., Padre',
+                'testimonials.2': "Tranquilidad sabiendo que mi hijo está en un entorno tan amoroso y seguro. ¡La comunicación es excelente. Altamente recomendado!",
+                'testimonials.2.name': '- James R., Padre',
+                'testimonials.3': "¡La mejor decisión de cuidado infantil que hemos tomado! El equipo de Littles DayCare va más allá. Los confiamos completamente.",
+                'testimonials.3.name': '- Michelle T., Padre',
+                
+                'ages.title': "¿Cuántos Años Tiene Su Hijo?",
+                'ages.subtitle': 'Ofrecemos cuidado especializado para niños de 3 a 5 años',
+                'ages.preschool': 'Preescolar',
+                'ages.preschool.range': '3 – 4 años',
+                'ages.prek': 'Pre-K',
+                'ages.prek.range': '4 – 5 años',
+                
+                'faq.title': 'Preguntas Frecuentes',
+                'faq.q1': '¿Cuáles son sus horarios de atención?',
+                'faq.a1': 'Estamos abiertos de lunes a jueves de 7:45 AM a 5:00 PM.',
+                'faq.q2': '¿Qué grupos de edad atienden?',
+                'faq.a2': 'Atendemos a niños de 3 a 5 años, con programas de Preescolar (3–4) y Pre-K (4–5).',
+                'faq.q3': '¿Proporcionan comidas?',
+                'faq.a3': 'Proporcionamos un refrigerio por la mañana y otro por la tarde. Las familias traen el almuerzo. Acomodamos restricciones dietéticas y alergias.',
+                'faq.q4': '¿Qué medidas de seguridad hay?',
+                'faq.a4': 'Seguimos todos los requisitos de licencia estatal de Oregón. Nuestras medidas incluyen entrada/salida segura, personal capacitado, inspecciones sanitarias regulares, protocolos de emergencia y rutinas de limpieza estrictas.',
+                'faq.q5': '¿Hay estacionamiento disponible?',
+                'faq.a5': 'Sí, hay estacionamiento conveniente en el lugar para dejar y recoger. También ofrecemos horarios flexibles para facilitar las transiciones.',
+                'faq.q6': '¿Cómo se comunican con los padres?',
+                'faq.a6': '¡Creemos en la comunicación abierta! Proporcionamos actualizaciones diarias, informes de progreso regulares, conferencias padres-maestros, y siempre estamos disponibles para preguntas. Estamos comprometidos a mantenerlo informado en cada paso del camino.',
+                
+                'contact.title': 'Ponte en Contacto',
+                'contact.subtitle': "¿Listo para darle a tu hijo una maravillosa experiencia de cuidado infantil? ¡Contáctanos hoy!",
+                'contact.info': 'Información de Contacto',
+                'contact.address': 'Dirección',
+                'contact.addressValue': '317 State St, Hood River, OR 97031',
+                'contact.phone': 'Teléfono',
+                'contact.email': 'Correo Electrónico',
+                'contact.hours': 'Horarios',
+                'contact.hoursM': 'Lunes – Jueves',
+                'contact.hoursT': '7:45 AM – 5:00 PM',
+                'contact.name': 'Nombre Completo',
+                'contact.namePlaceholder': 'Tu nombre',
+                'contact.emailLabel': 'Dirección de Correo',
+                'contact.emailPlaceholder': 'tu@correo.com',
+                'contact.phoneLabel': 'Número de Teléfono',
+                'contact.phonePlaceholder': '(503) 806-4570',
+                'contact.childAge': 'Edad del Niño',
+                'contact.childAgeSelect': 'Seleccionar grupo de edad',
+                'contact.childAge0': '0-12 meses (Bebé)',
+                'contact.childAge1': '12-24 meses (Niño Pequeño)',
+                'contact.childAge2': '2-4 años (Preescolar)',
+                'contact.message': 'Mensaje',
+                'contact.messagePlaceholder': 'Cuéntanos sobre tus necesidades...',
+                'contact.send': 'Enviar Consulta',
+                
+                'footer.desc': "Nutriendo mentes jóvenes y cuidando a los niños de nuestra comunidad desde la apertura en Hood River, Oregón.",
+                'footer.quickLinks': 'Enlaces Rápidos',
+                'footer.servicesTitle': 'Servicios',
+                'footer.infantCare': 'Cuidado de Bebés',
+                'footer.toddlerProgram': 'Programa de Niños Pequeños',
+                'footer.preschoolFooter': 'Preescolar',
+                'footer.activities': 'Actividades',
+                'footer.follow': 'Síguenos',
+                'footer.copyright': '© 2026 Little\'s Preschool. Todos los derechos reservados.',
+                'footer.privacy': 'Política de Privacidad',
+                'footer.terms': 'Términos y Condiciones',
+
+                'teachers.title': 'Conoce a Nuestros Maestros',
+                'teachers.subtitle': 'Educadores dedicados y cariñosos que hacen que cada día sea especial para tu hijo.',
+                'teachers.role': 'Maestra de Preescolar',
+                'teachers.aboutme': 'Sobre Mí',
+                'teachers.outside': 'Fuera del Salón',
+                'teachers.favorites': 'Favoritos',
+                'teachers.yaneli.bio': '¡Hola! Soy Yaneli y seré tu maestra de preescolar este año. ¡Estoy muy emocionada de comenzar un año lleno de aprendizaje, creatividad y diversión! Creo que cada estudiante es único y aporta algo especial a nuestra clase. No puedo esperar para conocerlos a todos.',
+                'teachers.yaneli.about': 'Tengo un certificado de Asociado en Desarrollo Infantil y tengo 7 años de experiencia docente. También soy una orgullosa mamá de tres hijos: dos hijas, Nevaeh (12) y Aaliyah (10), y un hijo, Ezrah (3). En mi tiempo libre, me encanta cocinar y crear recuerdos con mis hijos.',
+                'teachers.yaneli.out1': 'Ir a la playa',
+                'teachers.yaneli.out2': 'Ir de compras de segunda mano',
+                'teachers.yaneli.fav1': '🎨 Color: Negro y Rosa',
+                'teachers.yaneli.fav2': '🐱 Animal: Gato',
+                'teachers.yaneli.fav3': '🥨 Merienda: Pretzels y Hummus',
+                'teachers.deysi.bio': 'Hola, me llamo Deysi Esparza y seré una de tus maestras de preescolar. Estoy muy emocionada de conocerte y de que seas parte de nuestra familia del salón este año. ¡Juntos tendremos un gran año! P.D. No puedo esperar a que conozcas a mi perro Arlo. 😊',
+                'teachers.deysi.about': 'Tengo mi Certificado CDA (Asociado en Desarrollo Infantil) y he trabajado en un entorno de preescolar desde 2017. Este será mi 3er año enseñando y disfruto cada segundo en el salón de clases. Realmente disfruto cocinar, hacer arte y vivir aventuras dentro y fuera del salón.',
+                'teachers.deysi.out1': 'Pasar tiempo con la familia',
+                'teachers.deysi.out2': 'Salir a caminar y hacer senderismo',
+                'teachers.deysi.out3': 'Coleccionar plantas',
+                'teachers.deysi.fav1': '🎨 Color: Negro',
+                'teachers.deysi.fav2': '🐢 Animal: Tortugas',
+                'teachers.deysi.fav3': '🍟 Merienda: Papas fritas',
+                'teachers.patty.role': 'Directora Asistente',
+                'teachers.patty.bio': '¡Hola, soy Patty! Tengo un título de Asociado en Ciencias Aplicadas en Justicia Criminal y más de 10 años de experiencia en alcance comunitario y gestión de subvenciones.',
+                'teachers.patty.about': 'A lo largo de mi carrera, he tenido la oportunidad de trabajar de cerca con personas, familias y socios comunitarios, ayudando a conectar a la gente con recursos y creando relaciones más fuertes dentro de nuestra comunidad. Mi experiencia en alcance comunitario y apoyo de programas me ha enseñado la importancia de la comunicación, la compasión, la organización y de asegurarme de que cada familia se sienta bienvenida y apoyada. En Littles Preschool, estoy emocionada de aportar mi experiencia a un rol donde puedo apoyar a nuestros niños, familias, maestros y el crecimiento continuo de nuestro programa. Estoy orgullosa de ser parte de la creación de un ambiente cálido e inclusivo donde las familias se sientan conectadas y cada niño tenga la oportunidad de aprender, crecer y prosperar.',
+
+                'gallery.title': 'Galería',
+                'gallery.subtitle': 'Explora momentos de nuestra comunidad preescolar.',
+            }
+        };
+
+        // Current language
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        // Function to translate page
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(btn => {
+                btn.classList.add('active');
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Add language button listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial language
+            setLanguage(currentLanguage);
+
+            // Add click listeners to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+        });
+
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll Fade Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll('.scroll-fade');
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Form Validation and Submission
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const childAge = document.getElementById('child-age').value;
+            const message = document.getElementById('message').value.trim();
+
+            // Validation
+            if (!name || !email || !phone || !childAge || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Phone validation
+            const phoneRegex = /^[\d\s\-\(\)]+$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid phone number');
+                return;
+            }
+
+            // Submit via Formspree
+            const formData = new FormData(contactForm);
+            fetch('https://formspree.io/f/xyzbqqyp', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you for your inquiry! We will contact you soon.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was an issue sending your message. Please try again.');
+                }
+            }).catch(() => {
+                alert('Oops! There was an issue sending your message. Please try again.');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScroll = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > lastScroll) {
+                // Scrolling down - optional: hide navbar
+            } else {
+                // Scrolling up
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Lazy load images (if added in future)
+        if ('IntersectionObserver' in window) {
+            const imageObserverOptions = {
+                threshold: 0,
+                rootMargin: '50px'
+            };
+
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, imageObserverOptions);
+
+            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        }
+
+        // Gallery Lightbox
+        const galleryImages = Array.from(document.querySelectorAll('.gallery-click'));
+        const lightbox = document.getElementById('gallery-lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        if (galleryImages.length && lightbox && lightboxImage) {
+            let currentImageIndex = 0;
+
+            const showImage = (index) => {
+                currentImageIndex = (index + galleryImages.length) % galleryImages.length;
+                const selectedImage = galleryImages[currentImageIndex];
+                lightboxImage.src = selectedImage.src;
+                lightboxImage.alt = selectedImage.alt || 'Gallery image';
+                if (lightboxCounter) {
+                    lightboxCounter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+                }
+            };
+
+            const openLightbox = (index) => {
+                showImage(index);
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
+
+            galleryImages.forEach((img, index) => {
+                img.addEventListener('click', () => openLightbox(index));
+            });
+
+            if (lightboxPrev) {
+                lightboxPrev.addEventListener('click', () => showImage(currentImageIndex - 1));
+            }
+
+            if (lightboxNext) {
+                lightboxNext.addEventListener('click', () => showImage(currentImageIndex + 1));
+            }
+
+            if (lightboxClose) {
+                lightboxClose.addEventListener('click', closeLightbox);
+            }
+
+            lightbox.addEventListener('click', (event) => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (!lightbox.classList.contains('active')) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    closeLightbox();
+                }
+
+                if (event.key === 'ArrowLeft') {
+                    showImage(currentImageIndex - 1);
+                }
+
+                if (event.key === 'ArrowRight') {
+                    showImage(currentImageIndex + 1);
+                }
+            });
+        }
+
+        // Gallery Show More toggle
+        const galleryGrid = document.querySelector('.gallery-grid');
+        const galleryToggle = document.getElementById('gallery-toggle');
+
+        if (galleryGrid && galleryToggle) {
+            galleryToggle.addEventListener('click', () => {
+                const expanded = galleryGrid.classList.toggle('expanded');
+                galleryToggle.classList.toggle('expanded', expanded);
+                galleryToggle.querySelector('span').textContent = expanded ? 'Show Fewer Photos' : 'View More Photos';
+                if (!expanded) {
+                    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll(".faq-question").forEach(button => {
+            button.addEventListener("click", function() {
+                const item = this.parentElement;
+                const answer = item.querySelector(".faq-answer");
+                const icon = this.querySelector("i");
+                
+                // Close other items
+                document.querySelectorAll(".faq-item.active").forEach(activeItem => {
+                    if (activeItem !== item) {
+                        activeItem.classList.remove("active");
+                        activeItem.querySelector(".faq-answer").style.maxHeight = "0px";
+                        activeItem.querySelector("i").style.transform = "rotate(0deg)";
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle("active");
+                
+                if (item.classList.contains("active")) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.style.transform = "rotate(180deg)";
+                } else {
+                    answer.style.maxHeight = "0px";
+                    icon.style.transform = "rotate(0deg)";
+                }
+            });
+        });
+        // Teacher photo expand
+        document.addEventListener('DOMContentLoaded', function() {
+            const teacherOverlay = document.getElementById('teacher-overlay');
+            const teacherOverlayImg = document.getElementById('teacher-overlay-img');
+            const teacherPhotos = [document.getElementById('teacher1-photo'), document.getElementById('teacher2-photo'), document.getElementById('teacher3-photo'), document.getElementById('teacher4-photo')];
+            if (teacherOverlay && teacherOverlayImg) {
+                teacherPhotos.forEach(photo => {
+                    if (photo) {
+                        photo.addEventListener('click', () => {
+                            teacherOverlayImg.src = photo.src;
+                            teacherOverlayImg.alt = photo.alt;
+                            teacherOverlay.style.display = 'flex';
+                            document.body.style.overflow = 'hidden';
+                        });
+                    }
+                });
+                teacherOverlay.addEventListener('click', () => {
+                    teacherOverlay.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && teacherOverlay.style.display === 'flex') {
+                        teacherOverlay.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+
+        // Logo expand
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLogo = document.getElementById('nav-logo');
+            const logoOverlay = document.getElementById('logo-overlay');
+            if (navLogo && logoOverlay) {
+                navLogo.addEventListener('click', () => {
+                    logoOverlay.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+                logoOverlay.addEventListener('click', () => {
+                    logoOverlay.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && logoOverlay.style.display === 'flex') {
+                        logoOverlay.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Teacher Photo Expand Overlay -->
+    <div id="teacher-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center; cursor:pointer;" aria-label="Close photo" role="button">
+        <img id="teacher-overlay-img" src="" alt="" style="max-width:90vw; max-height:90vh; border-radius:50%; box-shadow:0 20px 60px rgba(0,0,0,0.6); animation:logoZoomIn 0.25s ease;">
+    </div>
+
+    <!-- Logo Expand Overlay -->
+    <div id="logo-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center; cursor:pointer;" aria-label="Close logo" role="button">
+        <img src="littlesdaycareimages/logo.jpeg" alt="Little's Preschool Logo" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.6); animation:logoZoomIn 0.25s ease;">
+    </div>
+
+</body>
+</html>
